@@ -3,6 +3,7 @@ module.exports = {
     browser: true,
     es6: true,
     node: true,
+    commonjs: true,
   },
   extends: [
     "eslint:recommended",
@@ -34,13 +35,26 @@ module.exports = {
       },
     ],
     "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
+    "react/jsx-props-no-spreading": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        js: "never",
+        jsx: "never",
+        ts: "never",
+        tsx: "never",
+      },
+    ],
   },
   settings: {
     "import/resolver": {
       node: {
-        extensions: [".ts", ".tsx", ".native.js"],
+        extensions: [".js", ".ts", ".tsx", ".native.js"],
       },
+      typescript: {}, // 프로젝트 Root의 tsconfig.json을 찾는다.
     },
   },
-  exclude: ["node_modules"],
+  ignorePatterns: ["node_modules/*"],
+  // exclude: ["node_modules"],
 };
