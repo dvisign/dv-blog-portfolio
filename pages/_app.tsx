@@ -2,6 +2,7 @@ import { AppProps } from "next/app";
 import { NextPage } from "next";
 import Head from "next/head";
 import GlobalStyle from "@styles/globalStyle";
+import wrapper from "@store/storeConfig";
 
 const Reactproject: NextPage<AppProps> = ({
   Component,
@@ -20,5 +21,4 @@ const Reactproject: NextPage<AppProps> = ({
     </>
   );
 };
-
-export default Reactproject;
+export default wrapper.withRedux(Reactproject);

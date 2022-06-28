@@ -21,12 +21,16 @@
     "skipLibCheck": true, // 정의 파일의 타입 확인을 건너 뛸 지 여부
     "forceConsistentCasingInFileNames": true, // 같은 파일에 대한 일관되지 않은 참조를 허용하지 않을 지 여부
     "baseUrl": ".", // baseUrl
-    "paths": {  // path alias 설정
+    "paths": {
+      // path alias 설정
       "@src/*": ["src/*"], // src path 설정
       "@styles/*": ["src/styles/*"], // src/styles path 설정
       "@utils/*": ["src/utils/*"], // src/utils path 설정
       "@hooks/*": ["src/hooks/*"], // src/hooks path 설정
-      "@components/*": ["src/components/*"] // src/components path 설정
+      "@components/*": ["src/components/*"], // src/components path 설정
+      "@interface/*": ["src/interface/*"], // src/interface path 설정
+      "@store/*": ["src/redux/store/*"], // src/redux/store path 설정
+      "@slice/*": ["src/redux/slice/*"] // src/redux/slice path 설정
     }
   },
   "include": [
