@@ -5,7 +5,7 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <Header />
-      <div>{children}</div>
+      <main>{children}</main>
       <footer>푸터영역</footer>
     </>
   );

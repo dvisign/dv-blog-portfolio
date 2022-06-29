@@ -1,11 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { createWrapper } from "next-redux-wrapper";
-import userReducer from "@slice/userSlice";
+import reducer from "@slice/reducers";
 
 const store = configureStore({
-  reducer: {
-    user: userReducer,
-  },
+  reducer,
   devTools: process.env.NODE_ENV !== "production",
 });
 
