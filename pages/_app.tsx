@@ -1,14 +1,10 @@
 import { AppProps } from "next/app";
-import { NextPage } from "next";
 import Head from "next/head";
 import GlobalStyle from "@styles/globalStyle";
 import wrapper from "@store/storeConfig";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const Reactproject: NextPage<AppProps> = ({
-  Component,
-  pageProps,
-}: AppProps) => {
+const Reactproject = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>

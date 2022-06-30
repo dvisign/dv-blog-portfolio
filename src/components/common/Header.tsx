@@ -1,6 +1,9 @@
 import Head from "next/head";
 import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
 import styled from "styled-components";
+import { useSelector } from "react-redux";
+import { RootState } from "@slice/reducers";
+import { CommonType, NavList } from "@interface/common";
 
 const HeaderStyle = styled.header`
   width: 100%;
@@ -17,8 +20,11 @@ const HeaderStyle = styled.header`
     }
   }
 `;
-
 const Header = () => {
+  const { navList } = useSelector<RootState, CommonType>(
+    (state) => state.common,
+  );
+  console.log(navList);
   return (
     <HeaderStyle>
       <Head>
@@ -40,18 +46,32 @@ const Header = () => {
           <Navbar.Toggle aria-controls="header-navs" />
           <Navbar.Collapse id="header-navs" className="justify-content-end">
             <Nav>
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#link">About</Nav.Link>
-              <Nav.Link href="#link">Aptitute</Nav.Link>
-              <Nav.Link href="#link">Work</Nav.Link>
-              <NavDropdown title="Board" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.2">
-                  Reference
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Log</NavDropdown.Item>
-                <NavDropdown.Divider />
-              </NavDropdown>
-              <Nav.Link href="#link">Contact</Nav.Link>
+              {navList.map((v: NavList) => {
+                if (!v.dropDownList) {
+                  return (
+                    <Nav.Link key={v.name} href={v.url}>
+                      {v.name}
+                    </Nav.Link>
+                  );
+                }
+                const lists = v.dropDownList.list;
+                return (
+                  <NavDropdown
+                    key={v.name}
+                    title={v.name}
+                    id="basic-nav-dropdown"
+                  >
+                    {lists.map((value) => {
+                      return (
+                        <NavDropdown.Item href={value.url}>
+                          {value.name}
+                        </NavDropdown.Item>
+                      );
+                    })}
+                    <NavDropdown.Divider />
+                  </NavDropdown>
+                );
+              })}
             </Nav>
           </Navbar.Collapse>
         </Container>

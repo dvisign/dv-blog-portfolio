@@ -7,6 +7,10 @@ const store = configureStore({
   devTools: process.env.NODE_ENV !== "production",
 });
 
+// const createStore = () => store;
+// export type RootState = ReturnType<typeof reducer>;
+// export type AppDispatch = typeof store.dispatch;
+// const wrapper = createWrapper(createStore);
+// export default wrapper;
 const wrapper = createWrapper(() => store);
 export default wrapper;
-export type RootState = ReturnType<typeof store.getState>;

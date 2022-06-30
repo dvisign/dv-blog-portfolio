@@ -1,6 +1,9 @@
 import type { NextPage } from "next";
 import AppLayout from "@components/AppLayout";
 import { Container, Row, Col } from "react-bootstrap";
+// import axios from "axios";
+import { getCommonData } from "@slice/commonSlice";
+import wrapper from "@store/storeConfig";
 
 const Index: NextPage = () => {
   return (
@@ -21,5 +24,16 @@ const Index: NextPage = () => {
     </AppLayout>
   );
 };
+export const getServerSideProps = wrapper.getServerSideProps(
+  (store) => async () => {
+    // const cookie = context.req ? context.req.headers.cookie : "";
+    // axios.defaults.headers.common.Cookies = "";
+    await store.dispatch(getCommonData());
+    // console.log(store.getState().common);
+    return {
+      props: {},
+    };
+  },
+);
 
 export default Index;
