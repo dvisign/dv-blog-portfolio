@@ -1,26 +1,30 @@
 import type { NextPage } from "next";
+import styled from "styled-components";
 import AppLayout from "@components/AppLayout";
 import { Container, Row, Col } from "react-bootstrap";
 // import axios from "axios";
 import { getCommonData } from "@slice/commonSlice";
 import wrapper from "@store/storeConfig";
 
+const MainStyles = styled.div`
+  width: 100%;
+  > #main_intro {
+    height: 100vh;
+  }
+`;
+
 const Index: NextPage = () => {
   return (
     <AppLayout>
-      <Container>
-        <Row>
-          <Col sm={12} md={12} lg={4}>
-            1
-          </Col>
-          <Col sm={12} md={6} lg={4}>
-            2
-          </Col>
-          <Col sm={12} md={6} lg={4}>
-            3
-          </Col>
-        </Row>
-      </Container>
+      <MainStyles>
+        <section id="main_intro">
+          <Container>
+            <Row>
+              <Col>1</Col>
+            </Row>
+          </Container>
+        </section>
+      </MainStyles>
     </AppLayout>
   );
 };

@@ -6,10 +6,7 @@ export interface DrowDownList {
 export interface NavList {
   url: string;
   name: string;
-  dropDownList?: {
-    name: string;
-    list: Array<DrowDownList>;
-  };
+  dropDownList?: Array<DrowDownList> | [];
 }
 
 export interface CommonType {

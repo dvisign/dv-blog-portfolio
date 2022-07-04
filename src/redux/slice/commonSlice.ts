@@ -9,31 +9,25 @@ const dummyData = {
       name: "Home",
     },
     {
-      url: "/about",
-      name: "About",
+      url: "/profile",
+      name: "Profile",
     },
     {
-      url: "/aptitute",
-      name: "Aptitute",
-    },
-    {
-      url: "/work",
-      name: "Work",
+      url: "/portfolio",
+      name: "Portfolio",
     },
     {
       name: "board",
-      dropDownList: {
-        list: [
-          {
-            url: "/reference",
-            name: "Reference",
-          },
-          {
-            url: "/log",
-            name: "Log",
-          },
-        ],
-      },
+      dropDownList: [
+        {
+          url: "/reference",
+          name: "Reference",
+        },
+        {
+          url: "/log",
+          name: "Log",
+        },
+      ],
     },
     {
       url: "/contact",

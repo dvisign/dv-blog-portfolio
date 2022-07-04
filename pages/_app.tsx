@@ -3,8 +3,10 @@ import Head from "next/head";
 import GlobalStyle from "@styles/globalStyle";
 import wrapper from "@store/storeConfig";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { getSeason } from "@utils/index";
 
 const Reactproject = ({ Component, pageProps }: AppProps) => {
+  getSeason(new Date());
   return (
     <>
       <Head>

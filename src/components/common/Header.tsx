@@ -24,7 +24,6 @@ const Header = () => {
   const { navList } = useSelector<RootState, CommonType>(
     (state) => state.common,
   );
-  console.log(navList);
   return (
     <HeaderStyle>
       <Head>
@@ -35,7 +34,7 @@ const Header = () => {
       </Head>
       <Navbar variant="dark" expand="lg">
         <Container>
-          <Navbar.Brand id="logos" href="#home">
+          <Navbar.Brand id="logos" href="/">
             <img
               alt="퍼블리셔 dvisign의 포트폴리오 입니다."
               src="/img/common/nav_logo.png"
@@ -54,24 +53,23 @@ const Header = () => {
                     </Nav.Link>
                   );
                 }
-                const lists = v.dropDownList.list;
+                const lists = v.dropDownList;
                 return (
                   <NavDropdown
                     key={v.name}
                     title={v.name}
                     id="basic-nav-dropdown"
                   >
-                    {lists.map((value) => {
-                      return (
-                        <NavDropdown.Item href={value.url}>
-                          {value.name}
-                        </NavDropdown.Item>
-                      );
-                    })}
+                    {lists.map((value) => (
+                      <NavDropdown.Item href={value.url} key={value.name}>
+                        {value.name}
+                      </NavDropdown.Item>
+                    ))}
                     <NavDropdown.Divider />
                   </NavDropdown>
                 );
               })}
+              {/* <Nav.Link>Login</Nav.Link> */}
             </Nav>
           </Navbar.Collapse>
         </Container>
