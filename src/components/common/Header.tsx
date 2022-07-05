@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "@slice/reducers";
 import { CommonType, NavList } from "@interface/common";
 
-const HeaderStyle = styled.header`
+const HeaderStyle = styled.header<{ season?: string }>`
   width: 100%;
   background-color: #3c3c3c;
   #logos {
@@ -21,11 +21,11 @@ const HeaderStyle = styled.header`
   }
 `;
 const Header = () => {
-  const { navList } = useSelector<RootState, CommonType>(
+  const { navList, season } = useSelector<RootState, CommonType>(
     (state) => state.common,
   );
   return (
-    <HeaderStyle>
+    <HeaderStyle season={season}>
       <Head>
         <link
           rel="stylesheet"

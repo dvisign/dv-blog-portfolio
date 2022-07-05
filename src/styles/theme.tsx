@@ -4,7 +4,7 @@ const season = {
     background: "yellow",
   },
   summer: {
-    background: "blue",
+    background: "#1986CB",
   },
   fall: {
     background: "orange",

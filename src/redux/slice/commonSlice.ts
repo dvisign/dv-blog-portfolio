@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
 import { CommonType } from "@interface/common";
+import { getSeason } from "@utils/index";
 // import axios from "axios";
 
 const dummyData = {
@@ -52,8 +53,10 @@ export const getCommonData = createAsyncThunk(
     // return dummyData;
   },
 );
+const dateTime = new Date();
 const initialState: CommonType = {
   navList: [],
+  season: getSeason(dateTime),
 };
 const commonSlice = createSlice({
   name: "common",
