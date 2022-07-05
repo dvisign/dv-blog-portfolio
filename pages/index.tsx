@@ -8,6 +8,9 @@ import wrapper from "@store/storeConfig";
 
 const MainStyles = styled.div`
   width: 100%;
+  background-color: ${({ theme }) => {
+    return theme.season.spring.background;
+  }};
   > #main_intro {
     height: 100vh;
   }

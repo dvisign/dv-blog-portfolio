@@ -1,14 +1,14 @@
 import { AppProps } from "next/app";
 import Head from "next/head";
-import GlobalStyle from "@styles/globalStyle";
-import wrapper from "@store/storeConfig";
+import { ThemeProvider } from "styled-components";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { getSeason } from "@utils/index";
+import GlobalStyle from "@styles/globalStyle";
+import theme from "@styles/theme";
+import wrapper from "@store/storeConfig";
 
 const Reactproject = ({ Component, pageProps }: AppProps) => {
-  getSeason(new Date());
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Head>
         <meta charSet="utf-8" />
         <title>DVISIGN :: 웹 퍼블리셔 정문채 포트폴리오</title>
@@ -24,7 +24,7 @@ const Reactproject = ({ Component, pageProps }: AppProps) => {
       </Head>
       <Component {...pageProps} />
       <GlobalStyle />
-    </>
+    </ThemeProvider>
   );
 };
 
