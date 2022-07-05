@@ -7,16 +7,18 @@ import { CommonType, NavList } from "@interface/common";
 
 const HeaderStyle = styled.header<{ season?: string }>`
   width: 100%;
-  background-color: #3c3c3c;
-  #logos {
-    #logo-text {
-      font-family: "Pacifico";
-      font-size: 1rem;
+  .navbar {
+    background-color: #3c3c3c;
+    #logos {
+      #logo-text {
+        font-family: "Pacifico";
+        font-size: 1rem;
+      }
     }
-  }
-  #header-navs {
-    * {
-      font-size: 0.8rem;
+    #header-navs {
+      * {
+        font-size: 0.8rem;
+      }
     }
   }
 `;
@@ -32,7 +34,7 @@ const Header = () => {
           href="https://fonts.googleapis.com/css?family=Pacifico"
         />
       </Head>
-      <Navbar variant="dark" expand="lg">
+      <Navbar fixed="top" variant="dark" expand="lg">
         <Container>
           <Navbar.Brand id="logos" href="/">
             <img

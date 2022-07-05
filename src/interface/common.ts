@@ -11,5 +11,5 @@ export interface NavList {
 
 export interface CommonType {
   navList?: Array<NavList> | [];
-  season?: string | "spring";
+  season?: string | null;
 }

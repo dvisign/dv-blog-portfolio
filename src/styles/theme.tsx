@@ -1,16 +1,56 @@
 // theme.ts
 const season = {
   spring: {
-    background: "yellow",
+    baseColor: "yellow",
+    dark: {
+      red: "#C1292F",
+      blue: "#DDF0EF",
+      green: "#048686",
+    },
+    light: {
+      red: "#E16E60",
+      blue: "#659BD1",
+      green: "#70B7C5",
+    },
   },
   summer: {
-    background: "#1986CB",
+    baseColor: "#43bcc6",
+    dark: {
+      red: "#C1292F",
+      blue: "#1986cb",
+      green: "#048686",
+    },
+    light: {
+      red: "#E16E60",
+      blue: "#659BD1",
+      green: "#70B7C5",
+    },
   },
   fall: {
-    background: "orange",
+    baseColor: "orange",
+    dark: {
+      red: "#C1292F",
+      blue: "#1986cb",
+      green: "#048686",
+    },
+    light: {
+      red: "#E16E60",
+      blue: "#659BD1",
+      green: "#70B7C5",
+    },
   },
   winter: {
-    background: "white",
+    baseColor: "white",
+    dark: {
+      red: "#C1292F",
+      blue: "#1986cb",
+      green: "#048686",
+    },
+    light: {
+      red: "#E16E60",
+      blue: "#659BD1",
+      green: "#70B7C5",
+    },
   },
 };
 

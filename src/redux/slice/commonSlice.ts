@@ -56,7 +56,7 @@ export const getCommonData = createAsyncThunk(
 const dateTime = new Date();
 const initialState: CommonType = {
   navList: [],
-  season: getSeason(dateTime),
+  season: getSeason(dateTime) ? getSeason(dateTime) : "spring",
 };
 const commonSlice = createSlice({
   name: "common",
